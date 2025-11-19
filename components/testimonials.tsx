@@ -41,7 +41,7 @@ export default function Testimonials() {
             Trusted by Leading Organizations
           </h2>
           <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
-            See what our clients say about their experience with VirtuousDataSolutionx
+            See what our clients say about their experience with VirtuousDataSolutions
           </p>
         </div>
 
