@@ -88,7 +88,7 @@ export default function Contact() {
         <div className="mt-12 grid md:grid-cols-3 gap-8 text-center">
           <div>
             <p className="text-foreground/60 mb-2">Email</p>
-            <p className="text-xl font-semibold text-foreground">hello@VDS.com</p>
+            <p className="text-xl font-semibold text-foreground">hello@VirtuousDataSolution.com</p>
           </div>
           <div>
             <p className="text-foreground/60 mb-2">Phone</p>
