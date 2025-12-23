@@ -1,103 +1,41 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import { Mail, Phone, MapPin, Send } from "lucide-react"
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: "",
-  })
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    setFormData({ name: "", email: "", company: "", message: "" })
-  }
-
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl text-foreground/60">Let's discuss how our solutions can drive your success</p>
-        </div>
-
-        <form onSubmit={handleSubmit} className="bg-background rounded-2xl border border-border p-8 md:p-12 shadow-lg">
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              className="px-6 py-3 rounded-lg bg-input border border-border focus:border-accent focus:outline-none transition text-foreground"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleChange}
-              className="px-6 py-3 rounded-lg bg-input border border-border focus:border-accent focus:outline-none transition text-foreground"
-              required
-            />
+    <section id="contact" className="py-32 px-4 bg-muted/20">
+      <div className="max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-5 gap-16">
+          
+          <div className="md:col-span-2">
+            <h2 className="text-5xl font-bold mb-8 tracking-tight">Let's build together.</h2>
+            <p className="text-lg text-muted-foreground mb-12">Discuss your project with our senior consultants today.</p>
+            
+            <div className="space-y-8">
+              <div className="flex items-center gap-5">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary"><Mail size={20}/></div>
+                <div><p className="text-sm text-muted-foreground uppercase font-bold tracking-widest">Email</p><p className="font-bold">hello@vds.com</p></div>
+              </div>
+              <div className="flex items-center gap-5">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary"><Phone size={20}/></div>
+                <div><p className="text-sm text-muted-foreground uppercase font-bold tracking-widest">Phone</p><p className="font-bold">+91 9763616999</p></div>
+              </div>
+            </div>
           </div>
 
-          <input
-            type="text"
-            name="company"
-            placeholder="Company Name"
-            value={formData.company}
-            onChange={handleChange}
-            className="w-full px-6 py-3 rounded-lg bg-input border border-border focus:border-accent focus:outline-none transition text-foreground mb-6"
-            required
-          />
+          <form className="md:col-span-3 space-y-6 bg-background p-10 rounded-[2.5rem] shadow-xl border border-border/50">
+            <div className="grid grid-cols-2 gap-6">
+              <input type="text" placeholder="Name" className="w-full bg-muted/50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+              <input type="email" placeholder="Work Email" className="w-full bg-muted/50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+            </div>
+            <input type="text" placeholder="Company" className="w-full bg-muted/50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+            <textarea rows={4} placeholder="Your Project Details" className="w-full bg-muted/50 border-none rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary/20 outline-none transition-all" />
+            <button className="w-full py-5 bg-primary text-primary-foreground font-bold rounded-2xl shadow-lg hover:shadow-primary/40 flex items-center justify-center gap-3 transition-all hover:scale-[1.02]">
+              Start Consultation <Send size={18} />
+            </button>
+          </form>
 
-          <textarea
-            name="message"
-            placeholder="Tell us about your project..."
-            value={formData.message}
-            onChange={handleChange}
-            rows={5}
-            className="w-full px-6 py-3 rounded-lg bg-input border border-border focus:border-accent focus:outline-none transition text-foreground mb-6"
-            required
-          />
-
-          <button
-            type="submit"
-            className="w-full px-8 py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold hover:shadow-lg hover:shadow-primary/40 transition"
-          >
-            Send Message
-          </button>
-        </form>
-
-        <div className="mt-12 grid md:grid-cols-3 gap-8 text-center">
-          <div>
-            <p className="text-foreground/60 mb-2">Email</p>
-            <p className="text-xl font-semibold text-foreground">hello@VirtuousDataSolution</p>
-          </div>
-          <div>
-            <p className="text-foreground/60 mb-2">Phone</p>
-            <p className="text-xl font-semibold text-foreground">+91 9763616999</p>
-          </div>
-          <div>
-            <p className="text-foreground/60 mb-2">Location</p>
-            <p className="text-xl font-semibold text-foreground">Pune</p>
-          </div>
         </div>
       </div>
     </section>

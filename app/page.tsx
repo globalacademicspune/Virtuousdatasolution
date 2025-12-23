@@ -10,13 +10,15 @@ import Footer from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <main className="relative min-h-screen">
       <Header />
       <Hero />
-      <Services />
-      <Stats />
-      <Testimonials />
-      <Contact />
+      <div className="relative z-20 bg-background">
+        <Services />
+        <Stats />
+        <Testimonials />
+        <Contact />
+      </div>
       <Footer />
     </main>
   )
